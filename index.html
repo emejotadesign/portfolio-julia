@@ -487,7 +487,8 @@ table.compare{width:100%;border-collapse:collapse;min-width:560px;font-size:var(
 .du-hero-shot{display:block;width:100%;padding:0;border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:var(--surface);box-shadow:0 24px 50px -30px rgba(20,21,25,.35)}
 .du-hero-shot img{display:block;width:100%;height:auto}
 .du-gallery{display:grid;grid-template-columns:1fr;gap:var(--s-6) var(--s-5);margin-top:var(--s-6)}
-@media (min-width:760px){.du-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:760px){.du-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.du-main-fig + .du-main-fig{margin-top:var(--s-7)}
 .du-gallery figure,.du-main-fig{margin:0;display:flex;flex-direction:column;gap:var(--s-3)}
 .du-gallery figcaption,.du-main-fig figcaption{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;font-size:var(--t-sm);color:var(--ink-2);max-width:70ch}
 .du-gallery figcaption b,.du-main-fig figcaption b{display:block;color:var(--ink);font-weight:600}
@@ -1002,6 +1003,65 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
 .home-lx .lxp{position:absolute;left:370px;top:10px;width:254px}
 .home-lx .lxs{height:410px}
 
+
+/* ---------- Cursor personalizado: mate (solo mouse/trackpad) ---------- */
+@media (hover: hover) and (pointer: fine){
+  html, body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E %3Cpath d='M3 3 L16.5 15.5' stroke='%23FFFFFF' stroke-width='4.6' stroke-linecap='round'/%3E %3Cpath d='M12.6 14.2 C12.1 17 9 19.2 9 23.2 C9 27.6 13 30.6 18.6 30.6 C24.2 30.6 28.2 27.6 28.2 23.2 C28.2 19.2 25.1 17 24.6 14.2 Z' fill='%23141519' stroke='%23FFFFFF' stroke-width='1.6' stroke-linejoin='round'/%3E %3Cellipse cx='18.6' cy='14.2' rx='6.2' ry='2' fill='%236E8B3D' stroke='%23C9CCD4' stroke-width='1.3'/%3E %3Cpath d='M3 3 L16.5 15.5' stroke='%235B6070' stroke-width='2.2' stroke-linecap='round'/%3E %3Ccircle cx='16.6' cy='15.1' r='1.5' fill='%235B6070'/%3E %3C/svg%3E") 3 3, auto}
+  a[href], button, [role="button"], [role="tab"], label[for], select, summary,
+  input[type="checkbox"], input[type="radio"]{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E %3Cpath d='M3 3 L16.5 15.5' stroke='%23FFFFFF' stroke-width='4.6' stroke-linecap='round'/%3E %3Cpath d='M12.6 14.2 C12.1 17 9 19.2 9 23.2 C9 27.6 13 30.6 18.6 30.6 C24.2 30.6 28.2 27.6 28.2 23.2 C28.2 19.2 25.1 17 24.6 14.2 Z' fill='%232F47C4' stroke='%23FFFFFF' stroke-width='1.6' stroke-linejoin='round'/%3E %3Cellipse cx='18.6' cy='14.2' rx='6.2' ry='2' fill='%236E8B3D' stroke='%23C9CCD4' stroke-width='1.3'/%3E %3Cpath d='M3 3 L16.5 15.5' stroke='%235B6070' stroke-width='2.2' stroke-linecap='round'/%3E %3Ccircle cx='16.6' cy='15.1' r='1.5' fill='%235B6070'/%3E %3C/svg%3E") 3 3, pointer !important}
+  input[type="text"], input[type="email"], input[type="search"], textarea{cursor:text !important}
+  [data-zoom-src]{cursor:zoom-in !important}
+  [aria-disabled="true"]{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E %3Cpath d='M3 3 L16.5 15.5' stroke='%23FFFFFF' stroke-width='4.6' stroke-linecap='round'/%3E %3Cpath d='M12.6 14.2 C12.1 17 9 19.2 9 23.2 C9 27.6 13 30.6 18.6 30.6 C24.2 30.6 28.2 27.6 28.2 23.2 C28.2 19.2 25.1 17 24.6 14.2 Z' fill='%23141519' stroke='%23FFFFFF' stroke-width='1.6' stroke-linejoin='round'/%3E %3Cellipse cx='18.6' cy='14.2' rx='6.2' ry='2' fill='%236E8B3D' stroke='%23C9CCD4' stroke-width='1.3'/%3E %3Cpath d='M3 3 L16.5 15.5' stroke='%235B6070' stroke-width='2.2' stroke-linecap='round'/%3E %3Ccircle cx='16.6' cy='15.1' r='1.5' fill='%235B6070'/%3E %3C/svg%3E") 3 3, default !important}
+  :disabled{cursor:not-allowed !important}
+}
+
+/* ---------- Compañera flotante (solo pantallas táctiles) ---------- */
+.mate-buddy{display:none}
+@media (hover: none) and (pointer: coarse){
+  .mate-buddy{display:block;position:fixed;z-index:45;pointer-events:none;width:58px;height:85px;
+    right:calc(12px + env(safe-area-inset-right, 0px));bottom:calc(6px + env(safe-area-inset-bottom, 0px));
+    transform-origin:50% 100%;transition:transform .45s cubic-bezier(.2,.8,.2,1), opacity .35s ease}
+  .mate-buddy.is-hidden{transform:translateY(calc(100% + 16px));opacity:0}
+  .mate-buddy.is-scrolling{opacity:.45;transform:scale(.85)}
+  .mate-buddy .face{width:100%;height:100%;background:url("assets/julia-mate-full.png") center bottom/contain no-repeat;
+    transform-origin:50% 100%;filter:drop-shadow(0 4px 6px rgba(20,21,25,.12))}
+  .mate-buddy .ticks{position:absolute;top:-6px;right:-14px;width:22px;height:22px;opacity:0}
+  .mate-buddy .heart{position:absolute;top:-4px;left:-12px;width:18px;height:18px;opacity:0}
+  .mate-buddy.pop .face{animation:buddyPop .8s cubic-bezier(.2,.9,.3,1.25)}
+  .mate-buddy.hop .face{animation:buddyHop .55s ease}
+  .mate-buddy.tick .ticks{animation:buddyTicks .8s ease}
+  .mate-buddy.love .heart{animation:buddyHeart 1.2s ease}
+  @keyframes buddyPop{0%{transform:translateY(30%) scale(.8)}55%{transform:translateY(-4%) scale(1.03)}75%{transform:rotate(-4deg)}100%{transform:none}}
+  @keyframes buddyHop{0%{transform:none}35%{transform:translateY(-6px) rotate(-4deg)}70%{transform:translateY(0) rotate(2deg)}100%{transform:none}}
+  @keyframes buddyTicks{0%{opacity:0;transform:scale(.6)}30%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.1)}}
+  @keyframes buddyHeart{0%{opacity:0;transform:translateY(4px) scale(.6)}30%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-14px) scale(1)}}
+}
+@media (hover: none) and (pointer: coarse) and (prefers-reduced-motion: reduce){
+  .mate-buddy, .mate-buddy *{animation:none!important;transition:opacity .2s linear!important}
+  .mate-buddy.is-hidden, .mate-buddy.is-scrolling{transform:none!important}
+}
+
+/* ---------- Ilustración junto al título (desktop con mouse) ---------- */
+.hero-buddy{display:none}
+@media (hover: hover) and (pointer: fine) and (min-width: 960px){
+  .hero{position:relative}
+  .hero-buddy{display:block;position:absolute;right:max(40px, env(safe-area-inset-right, 0px));
+    top:calc(clamp(48px,9vw,120px) + clamp(10px,2vw,40px));height:clamp(230px,24vw,320px);aspect-ratio:439/640;
+    transform-origin:50% 100%;animation:hbIn .9s .25s cubic-bezier(.2,.9,.3,1.2) both}
+  .hero-buddy img{display:block;width:100%;height:100%;max-width:none;transform-origin:50% 100%;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+  .hero-buddy .hb-ticks{position:absolute;top:8%;right:-6%;width:16%;opacity:0;transition:opacity .25s, transform .35s;transform:scale(.6)}
+  .hero-buddy .hb-heart{position:absolute;top:22%;left:-10%;width:13%;opacity:0}
+  .hero-buddy:hover img{transform:rotate(-3deg) translateY(-4px)}
+  .hero-buddy:hover .hb-ticks, .hero:has(.btn-primary:hover) .hb-ticks{opacity:1;transform:none}
+  .hero:has(.btn-primary:hover) .hero-buddy img{transform:translateY(-3px) rotate(2deg)}
+  .hero:has(.btn-ghost:hover) .hb-heart, .hero-buddy.love .hb-heart{animation:hbHeart 1.2s ease}
+  @keyframes hbIn{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:none}}
+  @keyframes hbHeart{0%{opacity:0;transform:translateY(6px) scale(.6)}30%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-16px)}}
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 960px) and (prefers-reduced-motion: reduce){
+  .hero-buddy, .hero-buddy *{animation:none!important;transition:none!important}
+  .hero-buddy:hover img, .hero:has(.btn-primary:hover) .hero-buddy img{transform:none}
+}
 </style>
 
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -1050,6 +1110,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
 <div id="view-home" data-view="home">
   <section class="hero wrap anchor" id="inicio" aria-labelledby="hero-title">
     <h1 id="hero-title">Diseño experiencias digitales para que lo complejo se vuelva <span class="sel">simple<i></i><i></i><i></i><i></i><span class="cursor" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 1.5 15 8l-5.6 1.6L7 15.5Z" fill="#2F47C4" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg><span>Julia</span></span></span>.</h1>
+    <span class="hero-buddy" aria-hidden="true"><img src="assets/julia-mate-hero.webp" alt="" width="439" height="640" decoding="async" fetchpriority="low"><svg class="hb-ticks" viewBox="0 0 24 24" fill="none" stroke="#141519" stroke-width="2.2" stroke-linecap="round"><path d="M6 3l1.5 6M13 6l-4 5M19 12l-7 1"/></svg><svg class="hb-heart" viewBox="0 0 24 24" fill="none" stroke="#141519" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
     <div class="hero-foot">
       <p>Soy Julia, diseñadora UX/UI. Trabajo donde se cruzan <strong>las necesidades de las personas</strong>, <strong>los objetivos del producto</strong> y las decisiones de diseño que hacen que una experiencia funcione.</p>
       <div class="ctas">
@@ -1086,7 +1147,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
             <h3>App de control parental</h3>
             <p class="lede">Para que madres, padres y tutores bloqueen y administren las webs y apps que usan sus hijas e hijos, y respondan a tiempo cada pedido de acceso.</p>
             <dl>
-              <dt>Rol</dt><dd>UX/UI Designer, junto a Product Manager y Analista Funcional</dd>
+              <dt>Rol</dt><dd>UX/UI Designer, junto a Product Manager, Product Owner y Analista Funcional</dd>
               <dt>Foco</dt><dd>Gestión de solicitudes de acceso pendientes</dd>
               <dt>Trabajo</dt><dd>Entrevistas, flujos, wireframes, UI, prototipo interactivo</dd>
             </dl>
@@ -1167,7 +1228,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
       <div class="about-grid">
         <div class="about-text">
           <p>Me interesa entender qué necesitan las personas, detectar oportunidades de mejora y convertir problemas complejos en experiencias digitales claras.</p>
-          <p>Disfruto trabajar en equipo, conectar el análisis con el diseño y cuidar los detalles que hacen que un producto sea fácil de usar. En los últimos tres años trabajé en productos de escritorio y mobile, en colaboración con perfiles de producto y análisis funcional.</p>
+          <p>Disfruto trabajar en equipo, conectar el análisis con el diseño y cuidar los detalles que hacen que un producto sea fácil de usar. Trabajé en productos en las áreas fintech, salud, educación, entre otras, donde aprendí siempre en colaboración con equipos multidisciplinarios.</p>
         </div>
         <div class="skills" id="skills"></div>
       </div>
@@ -1229,7 +1290,6 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
         <div><span class="eyebrow">Intención 1</span><h3>“Quiero resolverlo ya”</h3><p>Necesita ver cuánto hay para actualizar y una acción principal que lo resuelva todo, sin interpretar cada ítem.</p></div>
         <div><span class="eyebrow">Intención 2</span><h3>“Quiero decidir qué cambia”</h3><p>Necesita ver cada driver, elegir uno y tener la certeza de que el resto queda como está.</p></div>
       </div>
-      <p class="note full">Estas dos intenciones son el planteo de diseño que guió la propuesta. No son perfiles derivados de una investigación con usuarios.</p>
     </div></div>
   </section>
 
@@ -1243,7 +1303,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
           <tbody>
             <tr><th scope="row">Para quién</th><td>Quien quiere resolver la tarea rápido</td><td>Quien quiere decidir qué se modifica</td></tr>
             <tr class="shared"><th scope="row">Punto de partida</th><td colspan="2">La misma pantalla de resultados del escaneo</td></tr>
-            <tr><th scope="row">Disparador</th><td>Botón principal “Update all (42)”, siempre visible arriba de la tabla</td><td>Botón “Update” en la fila del driver, o marcarlo y usar “Update selected (n)”</td></tr>
+            <tr><th scope="row">Disparador</th><td>Botón principal “Update all”, siempre visible arriba de la tabla</td><td>Botón “Update” en la fila del driver, o marcarlo y usar “Update selected (n)”</td></tr>
             <tr><th scope="row">Alcance</th><td>Todos los drivers y aplicaciones con actualización disponible</td><td>Solo el elemento elegido</td></tr>
             <tr><th scope="row">Confirmación</th><td>Resume cuántos drivers y aplicaciones se van a actualizar</td><td>Nombra el driver y aclara que el resto no cambia</td></tr>
             <tr><th scope="row">Al terminar</th><td>Resumen general del resultado</td><td>Vuelve a los resultados actualizados con lo pendiente</td></tr>
@@ -1282,15 +1342,16 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
   <section class="cs wrap" aria-labelledby="d6">
     <div class="cs-head"><div class="cs-num"><span class="n">06 — Diseño de interfaz</span></div><h2 id="d6">La pantalla de resultados, donde conviven los dos modos</h2></div>
     <div class="cs-body"><div class="col prose" style="margin-bottom:var(--s-6)"><p class="big">El diseño final organiza el recorrido completo en cinco pantallas, con la de resultados en el centro.</p><p>La misma estructura (barra lateral, encabezado con acciones y tabla) se mantiene en todo el flujo, para que actualizar todo o un solo driver se sienta como una misma tarea.</p></div></div>
+    <figure class="du-main-fig"><button class="du-hero-shot" type="button" data-zoom-src="assets/du-overview.png" data-zoom-wide="1" aria-label="Ampliar pantalla Overview"><img src="assets/du-overview.png" alt="Pantalla Overview de Driver &amp; Software Updater" width="1280" height="1024"></button><figcaption><span class="pin">1</span><div><b>Overview</b>Estado del equipo con una sola acción principal, “Scan my computer”, y el resumen del último escaneo.</div></figcaption></figure>
     <figure class="du-main-fig"><button class="du-hero-shot" type="button" data-zoom-src="assets/du-results.png" data-zoom-wide="1" aria-label="Ampliar pantalla Scan Results"><img src="assets/du-results.png" alt="Pantalla Scan Results de Driver &amp; Software Updater" width="1280" height="1024"></button>
-      <figcaption><span class="pin">2</span><div><b>Scan Results</b>“Update all (42)” es la acción principal. “Update selected” muestra cuántos elementos hay marcados, y cada fila tiene su propio botón “Update”. Las pestañas separan drivers y aplicaciones, y la versión instalada aparece tachada junto a la disponible.</div></figcaption></figure>
+      <figcaption><span class="pin">2</span><div><b>Scan Results</b>“Update all” es la acción principal. “Update selected” muestra cuántos elementos hay marcados, y cada fila tiene su propio botón “Update”. Las pestañas separan drivers y aplicaciones, y la versión instalada aparece tachada junto a la disponible.</div></figcaption></figure>
     <div class="du-gallery">
-      <figure><button class="du-hero-shot" type="button" data-zoom-src="assets/du-overview.png" data-zoom-wide="1" aria-label="Ampliar pantalla Overview"><img src="assets/du-overview.png" alt="Pantalla Overview de Driver &amp; Software Updater" width="1280" height="1024" loading="lazy"></button><figcaption><span class="pin">1</span><div><b>Overview</b>Estado del equipo con una sola acción principal, “Scan my computer”, y el resumen del último escaneo: 42 paquetes, 37 drivers y 5 aplicaciones.</div></figcaption></figure>
       <figure><button class="du-hero-shot" type="button" data-zoom-src="assets/du-confirm.png" data-zoom-wide="1" aria-label="Ampliar pantalla Confirmación"><img src="assets/du-confirm.png" alt="Pantalla Confirmación de Driver &amp; Software Updater" width="1280" height="1024" loading="lazy"></button><figcaption><span class="pin">3</span><div><b>Confirmación</b>Antes de empezar, el diálogo resume el alcance: cantidad total, desglose, punto de restauración y tamaño de descarga.</div></figcaption></figure>
       <figure><button class="du-hero-shot" type="button" data-zoom-src="assets/du-progress.png" data-zoom-wide="1" aria-label="Ampliar pantalla Progreso"><img src="assets/du-progress.png" alt="Pantalla Progreso de Driver &amp; Software Updater" width="1280" height="1024" loading="lazy"></button><figcaption><span class="pin">4</span><div><b>Progreso</b>Progreso general y secuencia de ejecución con el estado de cada elemento. Se puede pausar, cancelar u omitir un driver.</div></figcaption></figure>
       <figure><button class="du-hero-shot" type="button" data-zoom-src="assets/du-done.png" data-zoom-wide="1" aria-label="Ampliar pantalla Finalización"><img src="assets/du-done.png" alt="Pantalla Finalización de Driver &amp; Software Updater" width="1280" height="1024" loading="lazy"></button><figcaption><span class="pin">5</span><div><b>Finalización</b>Qué se actualizó, qué requiere atención y el punto de restauración creado, con un camino claro para volver.</div></figcaption></figure>
     </div>
     <p class="mono muted" style="margin-top:var(--s-4)">Tocá una pantalla para ampliarla.</p>
+    <p class="note" style="margin-top:var(--s-4)">Por un acuerdo de confidencialidad (NDA), modifiqué parte del diseño UI y algunos datos de estas pantallas respecto del producto original.</p>
 
     <div class="cs-body" style="margin-top:var(--s-8)"><div class="col prose" style="margin-bottom:var(--s-5)">
       <h3 style="font-size:var(--t-xl)">Prototipo interactivo</h3>
@@ -1335,7 +1396,6 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
       <p class="outcome">La propuesta organizó la gestión de actualizaciones alrededor de dos necesidades: resolver la tarea rápido o decidir elemento por elemento. Los dos recorridos conviven en una misma estructura visual y funcional.</p>
       <div class="cols2">
         <div><h3>Qué se entregó</h3><ul class="ticks"><li>Benchmarking competitivo</li><li>Flujos para los dos modos de actualización</li><li>Wireframes</li><li>Diseño de UI</li><li>Prototipo interactivo</li></ul></div>
-        <div><h3>Qué queda por validar</h3><ul class="ticks open"><li>Pruebas de usabilidad con personas de distintos niveles técnicos</li><li>Si “Update selected” y el botón “Update” de cada fila se distinguen sin explicación previa</li><li><span class="fill">Agregar resultados reales, si existen</span></li></ul></div>
       </div>
     </div></div>
   </section>
@@ -1352,10 +1412,10 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
     <p class="lede">Una app para bloquear y administrar las webs y apps que usan chicas y chicos. El foco del caso: las solicitudes de acceso que esperan una respuesta.</p>
     <dl class="facts">
       <div><dt>Rol</dt><dd>UX/UI Designer</dd></div>
-      <div><dt>Equipo</dt><dd>Product Manager y Analista Funcional</dd></div>
+      <div><dt>Equipo</dt><dd>Product Manager, Product Owner y Analista Funcional</dd></div>
       <div><dt>Qué hice</dt><dd>Entrevistas, flujos de usuario, wireframes, UI y prototipo interactivo</dd></div>
       <div><dt>Plataforma</dt><dd>App mobile</dd></div>
-      <div><dt>Año</dt><dd><span class="fill">Completar</span></dd></div>
+      <div><dt>Año</dt><dd>2025</dd></div>
     </dl>
   </header>
 
@@ -1428,13 +1488,10 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
           <li class="own">Identificar perfil o solicitud</li>
           <li class="own">Revisar solicitud<small>WEB O APP Y MOTIVO</small></li>
           <li class="own">Autorizar o bloquear</li>
-          <li class="tbd">Estado actualizado<small>FEEDBACK POR CONFIRMAR</small></li>
+          <li class="own">Estado actualizado<small>PERMITIDO O BLOQUEADO</small></li>
         </ol>
       </div>
-      <div class="flow-key">
-        <span><i style="background:var(--accent)"></i>Paso presente en las pantallas diseñadas</span>
-        <span><i style="background:var(--warn-soft);border:1.5px dashed var(--warn)"></i>Falta la pantalla o el mensaje de confirmación</span>
-      </div>
+      <p class="note full">Si la web o la app queda bloqueada, el menor ve una pantalla de bloqueo y no puede verla ni usarla.</p>
     </div></div>
   </section>
 
@@ -1480,7 +1537,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
         <p class="big">Probá el recorrido: respondé una solicitud desde Home o desde Solicitudes, y después mirá cómo cambia su estado en Permisos.</p>
         <p>Para llegar a Permisos, entrá a Perfiles y tocá “Ver Detalles”. Ahí podés alternar entre Sofía y Diego y filtrar por estado. La misma solicitud aparece en los tres lugares y, al resolverla en uno, se actualiza en todos.</p>
         <p>Es una recreación en HTML de las pantallas diseñadas, pensada para mostrar cómo se encadena el flujo.</p>
-        <p class="note">El mensaje que aparece después de autorizar o bloquear es una propuesta: no figura en las pantallas originales.</p>
+        <p class="note">Por un acuerdo de confidencialidad (NDA), modifiqué parte del diseño UI y algunos datos de estas pantallas respecto del producto original.</p>
         <button class="linkbtn" id="sp-reset" type="button" style="align-self:flex-start">Reiniciar prototipo</button>
         <p class="vh" aria-live="polite" id="sp-live"></p>
       </div>
@@ -1500,7 +1557,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
   <section class="cs wrap" aria-labelledby="s9">
     <div class="cs-head"><div class="cs-num"><span class="n">08 — Colaboración</span></div><h2 id="s9">De los requerimientos a pantallas que se pueden probar</h2></div>
     <div class="cs-body"><div class="col">
-      <div class="prose"><p>Trabajé en equipo con Product Manager y Analista Funcional para traducir necesidades de producto y requerimientos funcionales en flujos, wireframes, interfaces y prototipos interactivos.</p></div>
+      <div class="prose"><p>Trabajé en equipo con Product Manager, Product Owner y Analista Funcional para traducir necesidades de producto y requerimientos funcionales en flujos, wireframes, interfaces y prototipos interactivos.</p></div>
       <div class="collab">
         <div class="stack">
           <div class="who"><h3>Product Manager</h3><p>Necesidades y objetivos del producto</p></div>
@@ -1927,7 +1984,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
 
   <section class="cs wrap" aria-labelledby="fx4">
     <div class="cs-head"><div class="cs-num"><span class="n">04 — Solución diseñada</span></div><h2 id="fx4">El recorrido de un asistente</h2></div>
-    <div class="cs-body"><div class="col prose" style="margin-bottom:var(--s-6)"><p class="big">De entrar a la app a canjear un beneficio, en seis pantallas.</p></div></div>
+    <div class="cs-body"><div class="col prose" style="margin-bottom:var(--s-6)"><p class="big">De entrar a la app a canjear beneficios, en simples pasos.</p></div></div>
     <div class="fx-stage">
       <ol class="fx-journey">
         <li><button class="fx-phone" type="button" data-zoom-src="assets/fx-inicio.png" data-zoom-tall="1" aria-label="Ampliar pantalla Inicio"><img src="assets/fx-inicio.png" alt="Inicio: billetera, nivel, accesos rápidos y próxima actividad" loading="lazy" width="392" height="1361"></button>
@@ -2440,6 +2497,82 @@ route();
   });
   $("#zoom-close").addEventListener("click", ()=>dlg.close());
   dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+})();
+
+/* ---------- Compañera flotante en pantallas táctiles ---------- */
+(function(){
+  const touch = matchMedia("(hover: none) and (pointer: coarse)");
+  let el = null, ready = false, lastReact = 0, scrollT = null, io = null;
+  const seen = new Set();
+  const replay = (cls, ms) => { if (!el) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); setTimeout(() => el && el.classList.remove(cls), ms); };
+  const once = (key, fn) => { if (seen.has(key)) return; seen.add(key); fn(); };
+  function nearBottom(){ return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 110; }
+  const CASES = ["driver-updater","control-parental","logistica-farmaceutica","fintech-event-app"];
+  function inProjects(){
+    if (CASES.includes((location.hash || "").slice(1))) return true;
+    const w = document.getElementById("trabajo"); if (!w || w.closest("[hidden]")) return false;
+    const r = w.getBoundingClientRect(); return r.top < window.innerHeight * 0.5 && r.bottom > window.innerHeight * 0.5;
+  }
+  const shouldHide = () => nearBottom() || inProjects();
+  function syncVisibility(){ if (el && ready) el.classList.toggle("is-hidden", shouldHide()); }
+  function onScroll(){
+    if (!el || !ready) return;
+    syncVisibility();
+    el.classList.add("is-scrolling"); clearTimeout(scrollT);
+    scrollT = setTimeout(() => el && el.classList.remove("is-scrolling"), 450);
+  }
+  function onTap(e){
+    if (!ready || el.classList.contains("is-hidden")) return;
+    const t = e.target.closest('a[href], button, [role="tab"], label[for], input'); if (!t) return;
+    const now = Date.now(); if (now - lastReact < 900) return; lastReact = now;
+    replay("hop", 560); replay("tick", 760);
+  }
+  function onRoute(){
+    if (!ready) return;
+    setTimeout(syncVisibility, 60);
+  }
+  function start(){
+    if (el) return;
+    el = document.createElement("div");
+    el.className = "mate-buddy is-hidden";
+    el.setAttribute("aria-hidden", "true");
+    el.innerHTML = '<div class="face"></div>' +
+      '<svg class="ticks" viewBox="0 0 24 24" fill="none" stroke="#141519" stroke-width="2.2" stroke-linecap="round"><path d="M6 3l1.5 6M13 6l-4 5M19 12l-7 1"/></svg>' +
+      '<svg class="heart" viewBox="0 0 24 24" fill="none" stroke="#141519" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>';
+    document.body.appendChild(el);
+    setTimeout(() => {
+      if (!el) return;
+      ready = true;
+      syncVisibility();
+      if (el.classList.contains("is-hidden")) { onRoute(); return; }
+      replay("pop", 720);
+      setTimeout(() => once("welcome", () => replay("tick", 820)), 650);
+      onRoute();
+    }, 800);
+    addEventListener("scroll", onScroll, {passive:true});
+    addEventListener("hashchange", onRoute);
+    document.addEventListener("click", onTap, true);
+    const c = document.getElementById("contacto");
+    if (c && "IntersectionObserver" in window){
+      io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting && ready) once("contacto", () => replay("love", 1250)); }), {threshold:.35});
+      io.observe(c);
+    }
+  }
+  function stop(){
+    if (!el) return;
+    removeEventListener("scroll", onScroll); removeEventListener("hashchange", onRoute);
+    document.removeEventListener("click", onTap, true); io && io.disconnect();
+    el.remove(); el = null; ready = false;
+  }
+  const sync = () => touch.matches ? start() : stop();
+  touch.addEventListener ? touch.addEventListener("change", sync) : touch.addListener(sync);
+  sync();
+})();
+
+/* ---------- Ilustración del inicio: corazón al hacer clic ---------- */
+(function(){
+  const hb = document.querySelector(".hero-buddy"); if (!hb) return;
+  hb.addEventListener("click", () => { hb.classList.remove("love"); void hb.offsetWidth; hb.classList.add("love"); setTimeout(() => hb.classList.remove("love"), 1250); });
 })();
 </script>
 
