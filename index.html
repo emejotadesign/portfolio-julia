@@ -1062,6 +1062,157 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
   .hero-buddy, .hero-buddy *{animation:none!important;transition:none!important}
   .hero-buddy:hover img, .hero:has(.btn-primary:hover) .hero-buddy img{transform:none}
 }
+
+/* ---------- FinTech Event App: prototipo ---------- */
+.fp-wrap{display:grid;grid-template-columns:1fr;gap:var(--s-6);align-items:start;margin-top:var(--s-8)}
+@media (min-width:900px){.fp-wrap{grid-template-columns:auto minmax(0,1fr);gap:var(--s-8)}}
+.fp-phone{width:320px;max-width:100%;margin:0 auto;border-radius:42px;background:#04060B;padding:10px;box-shadow:0 0 0 1px rgba(0,0,0,.2),0 30px 60px -30px rgba(20,21,25,.6)}
+.fp{--b:#0E1523;--s1:#182031;--s2:#212A3C;--ln:rgba(255,255,255,.07);--t:#F2F4F8;--t2:#8E97AB;--blue:#4D8EFF;--lime:#A6F04A;--gold:#F2B627;--live:#7EE06A;
+  border-radius:32px;overflow:hidden;background:var(--b);height:660px;position:relative;display:flex;flex-direction:column;
+  font-family:"Plus Jakarta Sans",var(--f-body);color:var(--t);font-size:11.5px;line-height:1.35}
+.fp *{box-sizing:border-box}
+.fp button{font-family:inherit;color:inherit;border:0;cursor:pointer;background:none}
+.fp svg{width:14px;height:14px;flex:none}
+.fp-hd{display:grid;grid-template-columns:32px 1fr 32px;align-items:center;padding:14px 14px 8px}
+.fp-hd h5{margin:0;text-align:center;font-family:inherit;font-size:14.5px;font-weight:600}
+.fp-hd img{width:28px;height:28px;border-radius:8px}
+.fp-hd .bell{justify-self:end;position:relative;width:28px;height:28px;display:grid;place-items:center}
+.fp-hd .bell::after{content:"";position:absolute;top:4px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.fp-hd .back{width:28px;height:28px;display:grid;place-items:center}
+.fp-bd{flex:1;overflow-y:auto;padding:2px 12px 86px;display:flex;flex-direction:column;gap:10px;scrollbar-width:none}
+.fp-bd::-webkit-scrollbar{display:none}
+.fp-bd > *{flex-shrink:0}
+.fp-card{background:var(--s1);border-radius:16px;padding:12px;border:1px solid var(--ln)}
+.fp-lbl{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--t2);font-weight:600}
+.fp-hi{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700}
+.fp-hi .av{position:relative}
+.fp-hi .av img{width:32px;height:32px;border-radius:50%;display:block}
+.fp-hi .av::after{content:"";position:absolute;right:-1px;bottom:-1px;width:9px;height:9px;border-radius:50%;background:var(--live);border:2px solid var(--b)}
+.fp-coins{display:flex;align-items:center;gap:8px;margin-top:6px}
+.fp-coin{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFD66B,#E2A20F);color:#5B3A00;display:grid;place-items:center;font-weight:800;font-size:13px;box-shadow:0 0 14px rgba(242,182,39,.35)}
+.fp-coins b{font-size:28px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fp-coins span{color:var(--gold);font-weight:700;font-size:12px;align-self:flex-end;margin-bottom:5px}
+.fp-lvl{display:flex;justify-content:space-between;font-size:10.5px;font-weight:600;margin-top:10px}
+.fp-lvl em{font-style:normal;color:var(--lime)}
+.fp-bar{height:6px;border-radius:6px;background:#2A3346;overflow:hidden;margin-top:5px}
+.fp-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--lime),var(--blue));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.fp-bar.gold i{background:var(--gold)}
+.fp-sub{font-size:9.5px;color:var(--t2);margin-top:4px}
+.fp-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:38px;border-radius:12px;font-weight:700;font-size:12px}
+.fp-btn.pri{background:var(--blue);color:#0B1430;box-shadow:0 8px 20px -10px rgba(77,142,255,.8)}
+.fp-btn.sec{background:var(--s2);color:var(--t)}
+.fp-btn.lime{background:var(--lime);color:#14200A}
+.fp-btn:disabled{opacity:.45;cursor:not-allowed}
+.fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fp-tile{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:10px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:92px}
+.fp-tile:hover{border-color:rgba(77,142,255,.45)}
+.fp-tile .top{display:flex;justify-content:space-between;align-items:center}
+.fp-tile .ic{width:28px;height:28px;border-radius:8px;display:grid;place-items:center}
+.fp-tile b{font-size:14px;font-weight:700;margin-top:auto}
+.fp-tile small{color:var(--t2);font-size:9.5px}
+.fp-chip{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:700;border-radius:999px;padding:2px 7px;white-space:nowrap}
+.fp-chip.live{background:rgba(126,224,106,.14);color:var(--live)}
+.fp-chip.live::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.fp-chip.blue{background:rgba(77,142,255,.16);color:#9CC0FF}
+.fp-chip.gold{background:rgba(242,182,39,.15);color:var(--gold)}
+.fp-chip.mute{background:var(--s2);color:var(--t2)}
+.fp-flash{display:flex;align-items:center;gap:10px}
+.fp-flash .ic{width:30px;height:30px;border-radius:9px;background:rgba(242,182,39,.15);color:var(--gold);display:grid;place-items:center}
+.fp-flash b{color:var(--gold);font-size:10px;letter-spacing:.04em}
+.fp-flash small{display:block;color:var(--t2);font-size:9.5px}
+.fp-flash button{margin-left:auto;background:var(--lime);color:#14200A;font-weight:700;border-radius:10px;padding:7px 12px;font-size:11px}
+.fp-days{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--s1);border-radius:14px;padding:4px}
+.fp-days span{text-align:center;padding:7px 2px;border-radius:10px;font-size:9.5px;color:var(--t2)}
+.fp-days span b{display:block;font-size:13px;color:var(--t);font-weight:700}
+.fp-days span.on{background:var(--blue);color:#0B1430}
+.fp-days span.on b{color:#0B1430}
+.fp-search{display:flex;align-items:center;gap:8px;background:var(--s1);border-radius:12px;padding:9px 10px;color:var(--t2);font-size:11px}
+.fp-filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.fp-filters button{white-space:nowrap;border-radius:999px;padding:6px 11px;font-size:10.5px;font-weight:600;background:var(--s2);color:var(--t)}
+.fp-filters button[aria-pressed="true"]{background:#B9D2FF;color:#0B1430}
+.fp-ses{display:flex;flex-direction:column;gap:7px}
+.fp-ses.past{opacity:.6}
+.fp-ses.liveC{border-left:3px solid var(--lime);background:linear-gradient(160deg,#1E2A2A,var(--s1) 60%)}
+.fp-ses .row{display:flex;align-items:center;gap:6px}
+.fp-ses .time{display:inline-flex;gap:4px;align-items:center;border:1px solid var(--ln);border-radius:999px;padding:3px 8px;font-size:10px;font-weight:600}
+.fp-ses .star{margin-left:auto;width:28px;height:28px;border-radius:50%;background:var(--s2);display:grid;place-items:center;color:var(--t2)}
+.fp-ses .star[aria-pressed="true"]{background:#0B0F18;color:var(--gold)}
+.fp-ses h6{margin:0;font-family:inherit;font-size:14px;font-weight:700;line-height:1.25}
+.fp-ses .meta{font-size:9.5px;color:var(--t2);display:flex;gap:6px;align-items:center}
+.fp-ses .tag{border-radius:6px;padding:2px 6px;font-size:9px;font-weight:600}
+.fp-spk{display:flex;align-items:center;gap:8px}
+.fp-spk img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.fp-spk b{display:block;font-size:11px}
+.fp-spk small{color:var(--t2);font-size:9.5px}
+.fp-spk .act{margin-left:auto}
+.fp-mini{border-radius:10px;padding:7px 10px;font-size:10.5px;font-weight:700;background:var(--s2)}
+.fp-mini.blue{background:#B9D2FF;color:#0B1430}
+.fp-mini.done{background:rgba(126,224,106,.16);color:var(--live)}
+.fp-q{background:var(--s2);border-radius:16px;padding:12px;border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--blue),var(--lime)) 1}
+.fp-q h6{margin:6px 0 4px;font-family:inherit;font-size:16px;font-weight:700;line-height:1.25}
+.fp-opt{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--s1);border:1.5px solid var(--ln);border-radius:14px;padding:10px;width:100%}
+.fp-opt .r{display:flex;align-items:center;gap:8px}
+.fp-opt .box{width:18px;height:18px;border-radius:5px;background:var(--s2);display:grid;place-items:center;flex:none}
+.fp-opt .pct{margin-left:auto;font-weight:700;font-size:13px;font-variant-numeric:tabular-nums}
+.fp-opt .fp-bar{margin-top:0;height:5px}
+.fp-opt .fp-bar i{background:#3A4458}
+.fp-opt[aria-pressed="true"]{border-color:var(--blue);background:#1C2944}
+.fp-opt[aria-pressed="true"] .box{background:var(--blue);color:#0B1430}
+.fp-opt[aria-pressed="true"] .fp-bar i{background:var(--blue)}
+.fp-opt[aria-pressed="true"] .pct{color:#9CC0FF}
+.fp-letter{width:24px;height:24px;border-radius:7px;background:var(--s2);display:grid;place-items:center;font-weight:700;font-size:10.5px;flex:none}
+.fp-opt[aria-pressed="true"] .fp-letter{background:#B9D2FF;color:#0B1430}
+.fp-opt .ok{margin-left:auto;width:20px;height:20px;border-radius:50%;background:#B9D2FF;color:#0B1430;display:grid;place-items:center}
+.fp-timer{display:flex;align-items:center;gap:8px;background:var(--s2);border-radius:12px;padding:6px 10px}
+.fp-timer b{font-size:14px;font-variant-numeric:tabular-nums}
+.fp-timer small{display:block;color:var(--t2);font-size:9px;line-height:1}
+.fp-segs{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:8px}
+.fp-segs i{height:4px;border-radius:4px;background:#2A3346}
+.fp-segs i.d{background:var(--lime)}.fp-segs i.c{background:var(--blue)}
+.fp-note{font-size:9.5px;color:var(--t2);text-align:center}
+.fp-res{text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+.fp-res .big{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#C6FF6E,#6CC218);display:grid;place-items:center;color:#14200A;box-shadow:0 0 0 8px rgba(166,240,74,.1),0 0 30px rgba(166,240,74,.35);margin:6px 0}
+.fp-res .big.bad{background:radial-gradient(circle at 40% 35%,#FF9A8A,#D9473A);box-shadow:0 0 0 8px rgba(217,71,58,.12)}
+.fp-res .big svg{width:24px;height:24px}
+.fp-res h6{margin:0;font-family:inherit;font-size:18px;font-weight:800}
+.fp-res p{color:var(--t2);font-size:10.5px}
+.fp-res p em{font-style:normal;color:var(--lime);font-weight:700}
+.fp-earn{display:flex;justify-content:space-between;align-items:center}
+.fp-earn b{font-size:24px;font-weight:800;color:var(--gold)}
+.fp-earn .tot{background:var(--s2);border-radius:10px;padding:6px 10px;text-align:right;font-size:9px;color:var(--t2)}
+.fp-earn .tot strong{display:block;font-size:15px;color:var(--t)}
+.fp-pos{display:flex;align-items:center;gap:10px}
+.fp-pos .ic{width:30px;height:30px;border-radius:8px;background:var(--s2);display:grid;place-items:center;color:var(--gold)}
+.fp-pos b{font-size:15px}
+.fp-badges{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -12px;padding:0 12px}
+.fp-badge{flex:0 0 112px;background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:10px;text-align:center;font-size:9.5px;color:var(--t2)}
+.fp-badge .ic{width:34px;height:34px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center;background:rgba(166,240,74,.12);color:var(--lime);box-shadow:0 0 14px rgba(166,240,74,.2)}
+.fp-badge b{display:block;color:var(--t);font-size:11px;margin-bottom:2px}
+.fp-badge .got{color:var(--live);font-weight:600;margin-top:5px;display:block}
+.fp-badge.lock{opacity:.5}.fp-badge.lock .ic{background:var(--s2);color:var(--t2);box-shadow:none}
+.fp-rw{display:grid;grid-template-columns:58px minmax(0,1fr);gap:10px;align-items:center}
+.fp-rw img{width:58px;height:58px;border-radius:10px;object-fit:cover}
+.fp-rw .t{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.fp-rw b{font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fp-rw .cost{color:var(--gold);font-weight:700;font-size:10.5px;white-space:nowrap}
+.fp-rw p{color:var(--t2);font-size:9.5px;margin:2px 0 6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fp-rw .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:9.5px}
+.fp-rw .foot .okt{color:var(--live);font-weight:600}
+.fp-rw .foot .miss{flex:1}
+.fp-rw .foot .miss span{color:var(--gold);font-weight:600}
+.fp-rbtn{border-radius:9px;padding:6px 12px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.fp-rbtn.go{background:var(--lime);color:#14200A}
+.fp-rbtn.no{background:var(--s2);color:var(--t2);cursor:not-allowed}
+.fp-rbtn.done{background:rgba(126,224,106,.14);color:var(--live);cursor:default}
+.fp-tb{position:absolute;left:0;right:0;bottom:0;height:62px;background:#0A101C;border-top:1px solid var(--ln);display:grid;grid-template-columns:repeat(4,1fr);align-items:center}
+.fp-tb button{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9.5px;font-weight:600;color:var(--t2);padding:6px 0;position:relative}
+.fp-tb button svg{width:17px;height:17px}
+.fp-tb button.on{color:#B9D2FF}
+.fp-tb button.on::before{content:"";position:absolute;top:0;width:34px;height:30px;border-radius:50%;background:rgba(77,142,255,.18);filter:blur(6px)}
+.fp-toast{position:absolute;left:12px;right:12px;bottom:72px;background:#F2F4F8;color:#0B1430;border-radius:12px;padding:9px 12px;font-size:11px;font-weight:600;display:flex;gap:8px;align-items:center;box-shadow:0 10px 30px -10px rgba(0,0,0,.6);z-index:3}
+.fp-toast .fp-coin{width:20px;height:20px;font-size:10px;box-shadow:none}
+.fp-pop{animation:fpPop .5s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes fpPop{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
 </style>
 
 <a class="skip" href="#main">Saltar al contenido</a>
@@ -1125,7 +1276,7 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
       <div class="projects">
         <a class="project" href="#fintech-event-app">
           <div>
-            <span class="project-index">01 · App mobile · Event Technology</span>
+            <span class="project-index">01 · App mobile</span>
             <h3>FinTech Event App</h3>
             <p class="lede">Una app para que los asistentes de un evento FinTech consulten la agenda, participen en trivias y encuestas en vivo y sumen monedas para canjear por beneficios.</p>
             <dl>
@@ -1998,6 +2149,19 @@ dialog#zoom.tall img{max-height:none;width:min(406px,100%)}
       </ol>
       <p class="fx-hint">Tocá una pantalla para verla completa.</p>
     </div>
+    <div class="fp-wrap">
+      <div>
+        <div class="fp-phone"><div class="fp" id="fp"></div></div>
+        <p class="mono muted" style="text-align:center;margin-top:12px">Prototipo interactivo · basado en el diseño final</p>
+      </div>
+      <div class="prose">
+        <h3 style="font-size:var(--t-xl)">Prototipo interactivo</h3>
+        <p class="big">Probá el recorrido completo: entrá a la trivia desde Inicio o desde la charla en vivo de la Agenda, respondé y mirá cómo se acreditan las monedas.</p>
+        <p>Después votá en la encuesta de Actividades y canjeá un beneficio en Recompensas. El saldo, el nivel y el estado de cada beneficio se actualizan en todas las pantallas.</p>
+        <button class="linkbtn" id="fp-reset" type="button" style="align-self:flex-start">Reiniciar prototipo</button>
+        <p class="vh" aria-live="polite" id="fp-live"></p>
+      </div>
+    </div>
   </section>
 
   <section class="cs wrap" aria-labelledby="fx6">
@@ -2569,6 +2733,230 @@ route();
 (function(){
   const hb = document.querySelector(".hero-buddy"); if (!hb) return;
   hb.addEventListener("click", () => { hb.classList.remove("love"); void hb.offsetWidth; hb.classList.add("love"); setTimeout(() => hb.classList.remove("love"), 1250); });
+})();
+
+/* ---------- FinTech Event App: prototipo ---------- */
+(function(){
+  const root = document.getElementById("fp"); if (!root) return;
+  const live = document.getElementById("fp-live");
+  const I = {
+    bell:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 1 1 12 0c0 6 2.5 8 2.5 8h-17S6 15 6 9"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg>',
+    back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+    home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>',
+    cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4M8 14h2M12 14h2M16 14h0M8 17h2M12 17h2"/></svg>',
+    bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>',
+    medal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3h8l-2 6h-4z"/><circle cx="12" cy="15" r="5"/><path d="M12 13v4"/></svg>',
+    vote:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 16h12l-2-4H8z"/><path d="M10 12l2-6 3 1-2 5"/></svg>',
+    gift:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M4 13h16M12 9v11M12 9c-2-4-6-4-6-1.5S10 9 12 9c2 0 6-.5 6-1.5S14 5 12 9"/></svg>',
+    timer:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 1.5M9.5 2.5h5"/></svg>',
+    clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 1.5"/></svg>',
+    star:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 17l-5.2 2.7 1-5.9L3.5 9.7l5.9-.8z"/></svg>',
+    starO:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 17l-5.2 2.7 1-5.9L3.5 9.7l5.9-.8z"/></svg>',
+    pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>',
+    play:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z" fill="#0B1430"/></svg>',
+    tv:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10 9v5l4-2.5z" fill="currentColor"/></svg>',
+    q:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 9.5a2 2 0 1 1 3 1.7c-.7.4-1 1-1 1.8M12 16h.01"/></svg>',
+    arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+    x:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>',
+    bars:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="16" y="10" width="4" height="10" rx="1"/></svg>',
+    alarm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="7"/><path d="M9 13l2 2 4-4M4 5l3-2M20 5l-3-2"/></svg>',
+    brain:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h1V3zM15 3a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h-1V3z"/></svg>',
+    net:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="M12 7.5v4M12 11.5L6.5 16M12 11.5l5.5 4.5"/></svg>'
+  };
+  const SESS = [
+    {id:1, st:"past", time:"09:30 - 10:15", badge:'<span class="fp-chip mute">FINALIZADA</span>', tag:"Keynote", tagC:"mute", place:"Escenario Principal", cat:"all", title:"Apertura & Keynote: FinTech 2030", spk:"fxp-martin.png", who:"Martin Larrea", role:"Chairperson FinTech Summit", act:"rec"},
+    {id:2, st:"live", time:"11:00 - 11:45", badge:'<span class="fp-chip live">EN VIVO AHORA</span>', tag:"Pagos", tagC:"blue", place:"Sala Alpha · Capacidad al 88%", cat:"pagos", title:"Pagos Transfronterizos y Monedas Digitales", spk:"fxp-sofia.png", who:"Sofía Zhang", role:"VP de Estrategia @ PayGlobex", act:"live"},
+    {id:3, st:"next", time:"12:30 - 13:15", badge:'<span class="fp-chip blue">En 45 min</span>', tag:"IA & Datos", tagC:"blue", place:"Sala Beta · 2º Piso", cat:"ia", title:"RegTech y Cumplimiento Automatizado con LLMs", spk:"fxp-carlos.png", who:"Carlos Méndez", role:"Head of AI @ LexiFlow", act:"book"},
+    {id:4, st:"next", time:"14:30 - 15:30", badge:'<span class="fp-chip mute">Tarde</span>', tag:"Inversión", tagC:"gold", place:"Escenario Principal", cat:"inv", title:"Mesa Redonda: El Ecosistema Emprendedor Latinoamericano", spk:"fxp-panel.png", who:"4 Panelistas & Moderador", role:"VCs & Fundadores Unicornio", act:"more", wide:true}
+  ];
+  const TRIVIA = {q:"¿Qué tecnología está transformando actualmente los pagos digitales de alta velocidad y liquidación instantánea?", opts:["Protocolos de interoperabilidad ISO 20022 y redes instantáneas","Sistemas bancarios centralizados heredados en batch","Tarjetas magnéticas de banda tradicional","Cámaras de compensación manuales diferidas"], ok:0};
+  const POLL = ["Inteligencia artificial aplicada a scoring y fraude","Pagos digitales instantáneos transfronterizos","Finanzas descentralizadas (DeFi) y tokenización","Identidad digital soberana y biometría"];
+  const REW = [
+    {id:1, img:"fxp-reward1.png", name:"Pase Exclusivo Lounge VIP", desc:"Acceso con catering de autor y networking exclusivo con ponentes.", cost:1500},
+    {id:2, img:"fxp-reward2.png", name:"Kit Merchandising Summit", desc:"Hoodie premium + Termo térmico inteligente con display digital.", cost:1000},
+    {id:3, img:"fxp-reward3.png", name:"Mentoría 1 a 1 con Speaker", desc:"15 min de feedback estratégico de inversión y escalabilidad.", cost:800},
+    {id:4, img:"fxp-reward4.png", name:"Grabaciones On-Demand", desc:"Videos HD 4K + Presentaciones descargables de todas las salas.", cost:500}
+  ];
+  const seed = () => ({view:"home", bal:1250, xp:1250, today:320, fav:{2:true}, booked:{}, filter:"all",
+    tv:{sel:0, t:17, done:false, right:false, secs:0}, poll:{sel:0, sent:false, votes:[48,28,16,8], voted:73}, red:{4:true}});
+  let S = seed(), tick = null, toastT = null, toast = null;
+  const fmt = n => n.toLocaleString("es-AR");
+  const lvl = () => S.xp >= 1500 ? {n:"Nivel 4: Líder FinTech", pct:100, next:null} : {n:"Nivel 3: Explorador Tech", pct:Math.round((S.xp-500)/10), next:1500-S.xp};
+  const hd = t => `<div class="fp-hd"><img src="assets/fxp-logo.png" alt=""><h5>${t}</h5><span class="bell" aria-hidden="true">${I.bell}</span></div>`;
+  const hdBack = t => `<div class="fp-hd"><button class="back" type="button" data-go="home" aria-label="Volver al inicio">${I.back}</button><h5>${t}</h5><span></span></div>`;
+  function say(msg, coins){ toast = {msg, coins}; live.textContent = msg; clearTimeout(toastT); toastT = setTimeout(() => { toast = null; render(true); }, 2600); }
+
+  function home(){
+    const L = lvl();
+    return hd("Inicio") + `<div class="fp-bd">
+      <div class="fp-hi"><span class="av"><img src="assets/fxp-alex.png" alt=""></span>¡Hola, Alex!</div>
+      <div class="fp-card"><span class="fp-lbl" style="color:#9CC0FF">Cumbre oficial</span><div style="font-size:17px;font-weight:800;margin-top:3px">FinTech Summit 2025</div></div>
+      <div class="fp-card" style="background:linear-gradient(150deg,#1B2333,#1A1F2B 60%,#2A2716)">
+        <div style="display:flex;justify-content:space-between"><span class="fp-lbl">Billetera de Summit</span><span class="fp-chip mute">#14</span></div>
+        <div class="fp-coins"><span class="fp-coin">$</span><b>${fmt(S.bal)}</b><span>COINS</span></div>
+        <div class="fp-lvl"><span>${L.n}</span><em>${L.pct}% completado</em></div>
+        <div class="fp-bar"><i style="width:${L.pct}%"></i></div>
+        <div class="fp-sub">${L.next ? `Faltan ${fmt(L.next)} coins para Nivel 4 (Líder FinTech)` : "¡Llegaste al nivel máximo!"}</div>
+        <button class="fp-btn sec" type="button" data-go="rewards" style="margin-top:10px">Ver mis logros ${I.arrow}</button>
+      </div>
+      <div class="fp-grid">
+        <button class="fp-tile" type="button" data-go="agenda"><span class="top"><span class="ic" style="background:#22304E;color:#9CC0FF">${I.cal}</span><span class="fp-chip blue">14:30 hs</span></span><b>Agenda</b><small>Próx: IA en Pagos</small></button>
+        <button class="fp-tile" type="button" data-go="trivia"><span class="top"><span class="ic" style="background:#26361F;color:var(--lime)">${I.bolt}</span>${S.tv.done ? '<span class="fp-chip mute">Respondida</span>' : '<span class="fp-chip live">EN VIVO</span>'}</span><b>Trivias</b><small>Gana monedas ya</small></button>
+        <button class="fp-tile" type="button" data-go="poll"><span class="top"><span class="ic" style="background:#3A311A;color:var(--gold)">${I.vote}</span>${S.poll.sent ? '<span class="fp-chip mute">Votada</span>' : '<span class="fp-chip gold">1 Nueva</span>'}</span><b>Encuestas</b><small>Voto en Sala Quantum</small></button>
+        <button class="fp-tile" type="button" data-go="rewards"><span class="top"><span class="ic" style="background:#2A3346;color:#C9D3E6">${I.gift}</span></span><b>Premios</b><small>Pases VIP & Merch</small></button>
+      </div>
+      <div class="fp-card fp-flash"><span class="ic">${I.timer}</span><span><b>TRIVIA RELÁMPAGO</b><small>Gana hasta 250 coins</small></span><button type="button" data-go="trivia">Jugar</button></div>
+      <div style="display:flex;justify-content:space-between"><span class="fp-lbl">Próxima actividad destacada</span><span class="fp-chip live" style="background:none;padding:0">Transmitiendo</span></div>
+      <div class="fp-card fp-ses"><span><span class="fp-chip live">EN VIVO AHORA · Sala Quantum</span></span><h6 style="font-size:15px">El Futuro de la IA en Infraestructura Financiera</h6><span class="meta">${I.clock} 14:30 - 15:15 hs · <span style="color:#9CC0FF">Track Central</span></span>
+        <button class="fp-btn pri" type="button" data-go="agenda">${I.play} Entrar a la sesión</button></div>
+    </div>`;
+  }
+  function agenda(){
+    const cats = [["all","Todas (28)"],["pagos","FinTech & Pagos"],["ia","IA & Datos"],["inv","Inversión"]];
+    const list = SESS.filter(s => S.filter==="all" || s.cat===S.filter);
+    return hd("Agenda") + `<div class="fp-bd">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="fp-lbl">Calendario oficial</span><span class="fp-chip mute">México</span></div>
+      <div class="fp-days" aria-hidden="true"><span>Día 1<b>12 Oct</b>Concluido</span><span class="on">DÍA 2 (HOY)<b>13 Oct</b>14 Charlas</span><span>Día 3<b>14 Oct</b>Próximamente</span></div>
+      <div class="fp-search">${I.search}Buscar por charla, orador o sala…</div>
+      <div class="fp-filters">${cats.map(([k,l]) => `<button type="button" data-f="${k}" aria-pressed="${S.filter===k}">${l}</button>`).join("")}</div>
+      ${list.map(s => {
+        const fav = !!S.fav[s.id];
+        let act = "";
+        if (s.act==="rec") act = `<span class="fp-mini act" style="color:var(--t2)">${I.tv.replace('fill="currentColor"','fill="none"')} Ver grabación</span>`;
+        if (s.act==="book") act = S.booked[s.id] ? `<button class="fp-mini done act" type="button" data-book="${s.id}">Agendada ✓</button>` : `<button class="fp-mini blue act" type="button" data-book="${s.id}">Agendar</button>`;
+        if (s.act==="more") act = `<span class="fp-mini act">${I.arrow}</span>`;
+        const spk = s.wide ? `<img src="assets/${s.spk}" alt="" style="width:50px;border-radius:14px">` : `<img src="assets/${s.spk}" alt="">`;
+        return `<div class="fp-card fp-ses ${s.st==="past"?"past":""} ${s.st==="live"?"liveC":""}">
+          <div class="row"><span class="time">${s.st==="live"?I.timer:I.clock} ${s.time}</span>${s.badge}<button class="star" type="button" data-fav="${s.id}" aria-pressed="${fav}" aria-label="${fav?"Quitar de favoritos":"Marcar como favorita"}">${fav?I.star:I.starO}</button></div>
+          <span class="meta"><span class="tag fp-chip ${s.tagC}" style="border-radius:6px">${s.tag}</span>${I.pin} ${s.place}</span>
+          <h6>${s.title}</h6>
+          <div class="fp-spk">${spk}<span><b>${s.who}</b><small>${s.role}</small></span>${s.act==="live" ? '<span class="fp-chip gold act" style="border-radius:8px;padding:5px 8px">+200 PTS</span>' : act}</div>
+          ${s.act==="live" ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><button class="fp-btn lime" type="button" data-go="trivia">${I.q} ${S.tv.done?"Ver resultado":"Unirse a Trivia Live"}</button><span class="fp-btn sec">${I.tv} Ver transmisión</span></div>` : ""}
+        </div>`; }).join("")}
+    </div>`;
+  }
+  function trivia(){
+    const t = S.tv;
+    return hdBack("Trivias") + `<div class="fp-bd" style="padding-bottom:16px">
+      <div style="display:flex;justify-content:flex-end"><span class="fp-chip gold" style="padding:4px 9px">$ +250 Coins</span></div>
+      <div class="fp-card"><div style="display:flex;justify-content:space-between;align-items:center"><div><span class="fp-lbl">Trivia FinTech Summit</span><div style="font-size:15px;font-weight:800">Pregunta 2 <small style="color:var(--t2);font-weight:500">de 5</small></div></div>
+        <div class="fp-timer">${I.timer}<span><b>${t.t}s</b><small>restantes</small></span></div></div>
+        <div class="fp-segs"><i class="d"></i><i class="c"></i><i></i><i></i><i></i></div>
+        <div style="display:flex;justify-content:space-between;font-size:9px;margin-top:5px"><span style="color:#9CC0FF">40% completado</span><span style="color:var(--t2)">Rango: Fintech Pioneer</span></div></div>
+      <div class="fp-q" style="border-image:none;border-top:0"><span class="fp-lbl" style="color:#9CC0FF">${I.bolt} Desafío en directo</span><h6>${TRIVIA.q}</h6></div>
+      ${TRIVIA.opts.map((o,i) => `<button class="fp-opt" type="button" data-tv="${i}" aria-pressed="${t.sel===i}"><span class="r"><span class="fp-letter">${"ABCD"[i]}</span><span style="font-weight:${t.sel===i?700:500}">${o}</span>${t.sel===i?`<span class="ok">${I.check}</span>`:""}</span></button>`).join("")}
+      <div class="fp-card" style="padding:8px 10px;display:flex;justify-content:space-between;font-size:9.5px"><span><b>428</b> participantes respondiendo</span><span style="color:var(--live)">En vivo</span></div>
+      <button class="fp-btn pri" type="button" data-act="confirm" ${t.sel===null?"disabled":""}>Confirmar respuesta ${I.arrow}</button>
+      <p class="fp-note">Una vez confirmada no podrás modificar tu elección. Los puntos se acreditarán al finalizar.</p>
+    </div>`;
+  }
+  function result(){
+    const t = S.tv, ok = t.right, L = lvl();
+    const lounge = REW[0], miss = Math.max(0, lounge.cost - S.bal);
+    return hdBack("Resultados") + `<div class="fp-bd" style="padding-bottom:16px">
+      <div style="display:flex;justify-content:flex-end"><span class="fp-chip gold">${I.timer} ${t.secs.toFixed(1)}s</span></div>
+      <div class="fp-res"><span class="big ${ok?"":"bad"} fp-pop">${ok?I.check:I.x}</span><h6>${ok?"¡Respuesta correcta!":"Respuesta incorrecta"}</h6>
+        <p>${ok?`¡Excelente timing! Respondiste en <em>${t.secs.toFixed(1)} segundos</em> y subiste en el ranking.`:"La próxima sale. Mirá cuál era la respuesta correcta."}</p></div>
+      <div class="fp-card">
+        <div class="fp-earn"><div><span class="fp-lbl">Recompensa lograda</span><div style="display:flex;align-items:center;gap:6px;margin-top:4px"><span class="fp-coin" style="width:24px;height:24px;font-size:11px">$</span><b>+${ok?250:0}</b><span style="color:var(--gold);font-weight:700">coins</span></div></div><div class="tot">Total acumulado<strong>${fmt(S.bal)} <small style="font-size:9px;color:var(--t2)">coins</small></strong></div></div>
+        <div class="fp-card" style="background:var(--s2);margin-top:10px;padding:10px"><div style="display:flex;justify-content:space-between;font-size:10.5px;font-weight:600"><span>★ Pase Lounge VIP</span><span style="color:var(--gold)">${miss?`Faltan ${fmt(miss)} coins`:"¡Disponible!"}</span></div>
+          <div class="fp-bar gold"><i style="width:${Math.min(100,Math.round(S.bal/lounge.cost*100))}%"></i></div>
+          <div class="fp-sub">${miss?`¡Seguís sumando puntos! Te faltan ${fmt(miss)} coins para el Pase VIP.`:"Ya podés canjear el Pase VIP en Recompensas."}</div></div>
+      </div>
+      <div class="fp-card"><div style="display:flex;justify-content:space-between"><span class="fp-lbl">Desglose de la trivia</span><span style="color:var(--live);font-size:9.5px">✓ Verificada</span></div>
+        <div style="font-size:13px;font-weight:700;margin:6px 0">¿Qué tecnología está transformando actualmente los pagos digitales?</div>
+        <div class="fp-card" style="background:var(--s2);padding:8px 10px;display:flex;gap:8px;align-items:center;font-size:11px"><span class="fp-coin" style="width:18px;height:18px;background:var(--live);box-shadow:none;color:#14200A">${I.check}</span>ISO 20022 y redes instantáneas</div>
+        <div class="fp-sub" style="margin-top:8px">El <b style="color:var(--t)">78%</b> de la sala acertó</div></div>
+      <div class="fp-card fp-pos"><span class="ic">${I.bars}</span><span><span class="fp-sub" style="margin:0;display:block">Posición en la sala</span><b>${ok?"#12":"#16"}</b> <small style="color:var(--t2)">de 420 asistentes</small></span>${ok?'<span class="fp-chip live" style="margin-left:auto">+4 puestos</span>':""}</div>
+      <button class="fp-btn pri" type="button" data-go="poll">Siguiente pregunta ${I.arrow}</button>
+      <span class="fp-btn sec" style="opacity:.8">${I.medal} Ver tabla de posiciones</span>
+    </div>`;
+  }
+  function poll(){
+    const p = S.poll;
+    return hd("Actividades") + `<div class="fp-bd">
+      <div class="fp-card" style="padding:9px 10px"><div style="display:flex;justify-content:space-between"><span class="fp-chip live">SALA ALPHA · EN DIRECTO</span><span class="fp-chip gold">$ +50 Coins</span></div><div class="fp-sub" style="color:var(--t)">Pagos Transfronterizos y Monedas Digitales · Sofía</div></div>
+      <div class="fp-q"><span class="fp-chip blue" style="border-radius:4px">ENCUESTA EN VIVO</span> <span class="fp-sub">· 1 de 3</span><h6>¿Cuál creés que será la principal innovación financiera de los próximos años?</h6><span class="fp-sub">${p.sent?"Tu voto ya fue registrado.":"Seleccioná una opción para emitir tu voto al instante."}</span></div>
+      ${POLL.map((o,i) => `<button class="fp-opt" type="button" data-poll="${i}" aria-pressed="${p.sel===i}" ${p.sent?"disabled":""}><span class="r"><span class="box">${p.sel===i?I.check:""}</span><span>${o}${p.sel===i?`<small style="display:block;color:#9CC0FF;font-size:9.5px">${p.sent?"Tu voto":"Tu selección actual"}</small>`:""}</span><span class="pct">${p.votes[i]}%</span></span><span class="fp-bar"><i style="width:${p.votes[i]}%"></i></span></button>`).join("")}
+      <div class="fp-card" style="display:flex;justify-content:space-between;align-items:center;padding:9px 10px"><span style="font-size:10px"><span style="color:var(--live)">●</span> <b>854 asistentes</b><br><span style="color:var(--t2)">participando en vivo</span></span><span style="text-align:right"><b style="color:var(--lime);font-size:17px">${p.voted}%</b><br><span class="fp-sub" style="margin:0">han votado</span></span></div>
+      <button class="fp-btn pri" type="button" data-act="send" ${p.sent?"disabled":""}>${p.sent?"Respuesta enviada ✓":`Enviar respuesta ${I.arrow}`}</button>
+      <p class="fp-note" style="color:var(--gold)">${p.sent?"Sumaste +50 coins a tu billetera FinTech.":"Recibirás +50 coins instantáneas en tu billetera FinTech."}</p>
+    </div>`;
+  }
+  function rewards(){
+    const L = lvl();
+    return hd("Recompensas") + `<div class="fp-bd">
+      <div style="text-align:center"><span class="fp-chip live" style="background:none">FINTECH SUMMIT 2025</span><div style="font-size:17px;font-weight:800">Mis Recompensas</div></div>
+      <div class="fp-card">
+        <div style="display:flex;justify-content:space-between"><span class="fp-lbl">Balance acumulado</span><span class="fp-chip live">#14 Global</span></div>
+        <div class="fp-coins"><span class="fp-coin" style="border-radius:9px">$</span><b>${fmt(S.bal)}</b><span>coins</span></div>
+        <div class="fp-card" style="background:var(--s2);margin-top:10px;padding:10px"><div class="fp-lvl" style="margin:0"><span>${L.n}</span><em style="color:#9CC0FF">${L.pct}%</em></div><div class="fp-bar"><i style="width:${L.pct}%"></i></div>
+          <div style="display:flex;justify-content:space-between;font-size:9.5px;margin-top:5px;color:var(--t2)"><span>${L.next?`Faltan <b style="color:var(--gold)">${fmt(L.next)} coins</b>`:"¡Nivel máximo!"}</span><span style="color:var(--lime)">Nivel 4: Líder FinTech →</span></div></div>
+        <div class="fp-sub" style="margin-top:8px;color:var(--t)">↗ +${fmt(S.today)} coins ganadas hoy</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:14px;font-weight:700">Insignias del Congreso <span class="fp-chip mute">3 / 4</span></span></div>
+      <div class="fp-badges">
+        <div class="fp-badge"><span class="ic">${I.alarm}</span><b>Madrugador</b>Check-in puntual<span class="got">✓ Obtenida</span></div>
+        <div class="fp-badge"><span class="ic">${I.brain}</span><b>Crack de Trivia</b>5 respuestas al hilo<span class="got">✓ Obtenida</span></div>
+        <div class="fp-badge"><span class="ic">${I.net}</span><b>Networker</b>10 conexiones<span class="got">✓ Obtenida</span></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:14px;font-weight:700">Catálogo de Beneficios</span><span class="fp-sub" style="margin:0;color:var(--t)">Disponibles ahora</span></div>
+      ${REW.map(r => { const red = !!S.red[r.id], can = S.bal >= r.cost, miss = r.cost - S.bal;
+        const foot = red ? `<span class="okt">En tu biblioteca</span><button class="fp-rbtn done" type="button" aria-disabled="true">✓ Canjeado</button>`
+          : can ? `<span class="okt">● ¡Saldo disponible!</span><button class="fp-rbtn go" type="button" data-redeem="${r.id}">Canjear</button>`
+          : `<span class="miss"><span>Faltan ${fmt(miss)} coins</span><span class="fp-bar gold" style="margin-top:3px"><i style="width:${Math.round(S.bal/r.cost*100)}%"></i></span></span><button class="fp-rbtn no" type="button" aria-disabled="true">Insuficiente</button>`;
+        return `<div class="fp-card fp-rw"><img src="assets/${r.img}" alt=""><div style="min-width:0"><div class="t"><b>${r.name}</b><span class="cost">◎ ${fmt(r.cost)}</span></div><p>${r.desc}</p><div class="foot">${foot}</div></div></div>`; }).join("")}
+    </div>`;
+  }
+  function tabbar(){
+    const v = S.view, t = (id, ic, l, on) => `<button type="button" data-go="${id}" class="${on?"on":""}">${I[ic]}${l}</button>`;
+    return `<nav class="fp-tb" aria-label="Navegación de la app">${t("home","home","Inicio",v==="home")}${t("agenda","cal","Agenda",v==="agenda")}${t("poll","bolt","Actividades",v==="poll")}${t("rewards","medal","Recompensas",v==="rewards")}</nav>`;
+  }
+  function render(keep){
+    const bd = root.querySelector(".fp-bd"), y = keep && bd ? bd.scrollTop : 0;
+    const v = {home, agenda, trivia, result, poll, rewards}[S.view]();
+    root.innerHTML = v + (["trivia","result"].includes(S.view) ? "" : tabbar()) +
+      (toast ? `<div class="fp-toast" role="status">${toast.coins ? '<span class="fp-coin">$</span>' : "✓"} ${toast.msg}</div>` : "");
+    const nb = root.querySelector(".fp-bd"); if (nb) nb.scrollTop = y;
+  }
+  function stopTimer(){ clearInterval(tick); tick = null; }
+  function go(v){
+    stopTimer();
+    if (v === "trivia" && S.tv.done) v = "result";
+    S.view = v; render();
+    if (v === "trivia"){
+      S.tv.start = Date.now();
+      tick = setInterval(() => { if (!document.body.contains(root)) return stopTimer(); S.tv.t = Math.max(0, S.tv.t - 1); if (S.tv.t === 0) { answer(); return; } render(true); }, 1000);
+    }
+  }
+  function answer(){
+    stopTimer(); const t = S.tv;
+    t.secs = Math.max(0.8, (Date.now() - (t.start || Date.now())) / 1000); t.done = true; t.right = t.sel === TRIVIA.ok;
+    if (t.right){ S.bal += 250; S.xp += 250; S.today += 250; }
+    S.view = "result"; render();
+    if (t.right) say("+250 coins acreditadas", true);
+  }
+  root.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b || b.disabled || b.getAttribute("aria-disabled")) return;
+    const d = b.dataset;
+    if (d.go) return go(d.go);
+    if (d.f){ S.filter = d.f; return render(true); }
+    if (d.fav){ S.fav[d.fav] = !S.fav[d.fav]; return render(true); }
+    if (d.book){ S.booked[d.book] = !S.booked[d.book]; if (S.booked[d.book]) say("Charla agregada a tu agenda"); return render(true); }
+    if (d.tv !== undefined){ S.tv.sel = +d.tv; return render(true); }
+    if (d.poll !== undefined){ S.poll.sel = +d.poll; return render(true); }
+    if (d.redeem){ const r = REW.find(x => x.id === +d.redeem); S.bal -= r.cost; S.red[r.id] = true; say(`Canjeaste ${r.name}`); return render(true); }
+    if (d.act === "confirm") return answer();
+    if (d.act === "send"){
+      const p = S.poll; p.sent = true; p.votes = p.votes.map((v,i) => v + (i===p.sel ? 2 : 0)); const sum = p.votes.reduce((a,b)=>a+b,0);
+      p.votes = p.votes.map(v => Math.round(v/sum*100)); p.voted = 74; S.bal += 50; S.xp += 50; S.today += 50;
+      say("+50 coins por tu voto", true); return render(true);
+    }
+  });
+  document.getElementById("fp-reset").addEventListener("click", () => { stopTimer(); S = seed(); toast = null; live.textContent = "Prototipo reiniciado"; render(); });
+  render();
 })();
 </script>
 
